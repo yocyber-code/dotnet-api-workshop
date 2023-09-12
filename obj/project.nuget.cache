@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+95JZ4WnWRNH9Y5Tzs/VN52hTlpcoBf9ZvedLMHVi2kMcu1CQa6+Qe81JuIYsiaEbjRQ16RSvgnfgJKkUrHI9g==",
+  "dgSpecHash": "ZA0Wg5k4zJTSk7WtFj0s8galal9R0cyEkxEr/MAdNtWoxRW6j63GuPWuRv02GYyKEmJX6mYnmNVGFJJAqhr9NQ==",
   "success": true,
   "projectFilePath": "c:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yoshi\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
+    "C:\\Users\\Yoshi\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

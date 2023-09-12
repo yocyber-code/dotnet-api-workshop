@@ -5,6 +5,8 @@ using cmdev_dotnet_api.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Mapster;
+using cmdev_dotnet_api.services;
+using cmdev_dotnet_api.interfaces;
 
 namespace cmdev_dotnet_api.Controllers;
 
@@ -13,79 +15,67 @@ namespace cmdev_dotnet_api.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly DatabaseContext databaseContext;
+    private readonly IProductService productService;
 
-    public ProductsController(DatabaseContext databaseContext)
+    public ProductsController(DatabaseContext databaseContext, IProductService productService)
     {
         this.databaseContext = databaseContext;
+        this.productService = productService;
     }
 
     [HttpGet]
-    public ActionResult<List<ProductResponse>> GetProduct()
+    public async Task<ActionResult<IEnumerable<ProductResponse>>> GetProduct()
     {
-        List<ProductResponse> products = this.databaseContext.Products.Include(p => p.Category)
-        .OrderByDescending(p => p.ProductId)
-        .Select(ProductResponse.FromProduct).ToList();
+        List<ProductResponse> products = (await productService.FindAll()).Select(ProductResponse.FromProduct).ToList();
         return Ok(products);
     }
 
     [HttpGet("{id}")]
-    public ActionResult<ProductResponse> GetProductById(int id)
+    public async Task<ActionResult<ProductResponse>> GetProductById(int id)
     {
-        var products = databaseContext.Products.Include(p => p.Category)
-        .SingleOrDefault(p => p.ProductId == id);
-        if (products == null)
-        {
-            return NotFound();
-        }
-        return Ok(ProductResponse.FromProduct(products));
+        var product = await productService.FindById(id);
+        return Ok(product.Adapt<ProductResponse>());
     }
 
     [HttpGet("search")]
-    public ActionResult<List<ProductResponse>> GetProductByKeyword([FromQuery] string keyword = "")
+    public async Task<ActionResult<List<ProductResponse>>> GetProductByKeyword([FromQuery] string keyword = "")
     {
         if (string.IsNullOrEmpty(keyword))
         {
             return Ok(new List<string>());
         }
-        List<ProductResponse> result = databaseContext.Products.Include(p => p.Category)
-        .Where(p => p.Name.ToLower().Contains(keyword.ToLower()))
-        .Select(ProductResponse.FromProduct)
-        .ToList();
+        List<ProductResponse> result = (await productService.Search(keyword)).Select(ProductResponse.FromProduct).ToList();
         return Ok(result);
     }
 
     [HttpPost("")]
-    public ActionResult<ProductModel> CreateProduct([FromForm] ProductRequest body)
+    public async Task<ActionResult<ProductModel>> CreateProduct([FromForm] ProductRequest body)
     {
         Product product = body.Adapt<Product>();
-        databaseContext.Products.Add(product);
-        databaseContext.SaveChanges();
+        await productService.Create(product);
         return CreatedAtAction(nameof(CreateProduct), body);
     }
 
     [HttpPut("{id}")]
-    public ActionResult UpdateProducts(int id,[FromForm] ProductUpdateRequest body)
+    public async Task<ActionResult<ProductUpdateRequest>> UpdateProducts(int id, [FromForm] ProductUpdateRequest body)
     {
-        if (id <= 0 || id != body.ProductId) return NotFound();
-        var products = databaseContext.Products.Find(id);
-        if (products == null) return NotFound();
-        Product product = body.Adapt(products);
-        databaseContext.Products.Update(product);
-        databaseContext.SaveChanges();
+        if (id <= 0 || id != body.ProductId) return BadRequest();
+        var product = await productService.FindById(id);
+        if (product == null) return NotFound();
+        Product new_product = body.Adapt(product);
+        await productService.Update(new_product);
         return Ok(body);
     }
 
     [HttpDelete("{id}")]
-    public ActionResult DeleteProductById(int id)
+    public async Task<ActionResult> DeleteProductById(int id)
     {
         if (id <= 0) return NotFound();
-        var products = databaseContext.Products.Find(id);
+        var products = await productService.FindById(id);
         if (products == null) return NotFound();
-        databaseContext.Products.Remove(products);
-        databaseContext.SaveChanges();
+        await productService.Delete(products);
         return Ok();
     }
-
 
     public class ProductModel
     {

@@ -104,3 +104,5 @@ C:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\runtimes\win
 C:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Mapster.dll
 c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Mapster.Core.dll
+c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Autofac.dll
+c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Autofac.Extensions.DependencyInjection.dll

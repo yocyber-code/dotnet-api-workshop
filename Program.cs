@@ -1,4 +1,9 @@
+using System.Reflection;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using cmdev_dotnet_api.Data;
+using cmdev_dotnet_api.interfaces;
+using cmdev_dotnet_api.services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +18,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSQLServer")));
 
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+{
+    builder.RegisterAssemblyTypes(Assembly.GetEntryAssembly())
+    .Where(t => t.Name.EndsWith("Service"))
+    .AsImplementedInterfaces();
+});
+
+// builder.Services.AddTransient<IProductService, ProductService>();
 
 var app = builder.Build();
 
