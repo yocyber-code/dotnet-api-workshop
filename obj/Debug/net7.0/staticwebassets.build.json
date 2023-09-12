@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tHqghV/4ovwpdJ59se+adzEYtIlChMbxVKiVkiT+xew=",
+  "Source": "cmdev-dotnet-api",
+  "BasePath": "_content/cmdev-dotnet-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
