@@ -7,11 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using Mapster;
 using cmdev_dotnet_api.services;
 using cmdev_dotnet_api.interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace cmdev_dotnet_api.Controllers;
 
 [ApiController] //date annotation
 [Route("[controller]")]
+[Authorize(Roles = "Admin, Cashier")]
 public class ProductsController : ControllerBase
 {
     private readonly DatabaseContext databaseContext;
@@ -51,8 +53,8 @@ public class ProductsController : ControllerBase
     [HttpPost("")]
     public async Task<ActionResult<ProductModel>> CreateProduct([FromForm] ProductRequest body)
     {
-        (string errorMessage,string imageName) = await productService.UploadImages(body.FormFiles);
-        if(!String.IsNullOrEmpty(errorMessage)) return BadRequest(errorMessage);
+        (string errorMessage, string imageName) = await productService.UploadImages(body.FormFiles);
+        if (!String.IsNullOrEmpty(errorMessage)) return BadRequest(errorMessage);
         Product product = body.Adapt<Product>();
         product.Image = imageName;
         await productService.Create(product);

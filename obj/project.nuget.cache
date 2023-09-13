@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Pgqwgo+mJEND/28KDo5KavXOr3n6FbNunDlhfX0Wjn9PN1fIkO/z3l6VUclKHesJC1mcvDy4tr57Agl7SHKpAg==",
+  "dgSpecHash": "oBSMQHqUo/Gg14Qp8EOunWD9oLpIMqnh5hUoam3WeGVMnSOcz5OJd/O8W4A7lqCGOzuQ3BoT0OZ30hm9jWotkg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Yoshi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
+    "C:\\Users\\Yoshi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

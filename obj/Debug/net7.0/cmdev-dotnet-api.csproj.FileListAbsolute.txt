@@ -107,3 +107,4 @@ c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Mapster.Core
 c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Autofac.dll
 c:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Autofac.Extensions.DependencyInjection.dll
 C:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\cmdev-dotnet-api.staticwebassets.runtime.json
+C:\Users\Yoshi\Documents\workshop\cmdev-dotnet-api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
