@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZA0Wg5k4zJTSk7WtFj0s8galal9R0cyEkxEr/MAdNtWoxRW6j63GuPWuRv02GYyKEmJX6mYnmNVGFJJAqhr9NQ==",
+  "dgSpecHash": "Pgqwgo+mJEND/28KDo5KavXOr3n6FbNunDlhfX0Wjn9PN1fIkO/z3l6VUclKHesJC1mcvDy4tr57Agl7SHKpAg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
+  "projectFilePath": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yoshi\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
     "C:\\Users\\Yoshi\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",

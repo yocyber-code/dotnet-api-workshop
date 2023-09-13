@@ -14,5 +14,6 @@ namespace cmdev_dotnet_api.interfaces
         Task Update(Product product);
         Task Delete(Product product);
         Task<IEnumerable<Product>> Search(string keyword);
+        Task<(string errorMessage, string imageName)> UploadImages(List<IFormFile> formFiles);
     }
 }

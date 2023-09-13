@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "tHqghV/4ovwpdJ59se+adzEYtIlChMbxVKiVkiT+xew=",
+  "Hash": "cn3+hvzhKOD5k3iwlfB8g2SP6Svi5KwtCmJjn4L5CkY=",
   "Source": "cmdev-dotnet-api",
   "BasePath": "_content/cmdev-dotnet-api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "cmdev-dotnet-api\\wwwroot",
+      "Source": "cmdev-dotnet-api",
+      "ContentRoot": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\",
+      "BasePath": "_content/cmdev-dotnet-api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\images\\ba247a3f-bd48-4616-9750-b2c09cbcf855.jpg",
+      "SourceId": "cmdev-dotnet-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\",
+      "BasePath": "_content/cmdev-dotnet-api",
+      "RelativePath": "images/ba247a3f-bd48-4616-9750-b2c09cbcf855.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ba247a3f-bd48-4616-9750-b2c09cbcf855.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\images\\c894879e-45d9-4814-a38e-834cfb726c38.png",
+      "SourceId": "cmdev-dotnet-api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\",
+      "BasePath": "_content/cmdev-dotnet-api",
+      "RelativePath": "images/c894879e-45d9-4814-a38e-834cfb726c38.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c894879e-45d9-4814-a38e-834cfb726c38.png"
+    }
+  ]
 }

@@ -4457,11 +4457,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
+      "projectUniqueName": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
       "projectName": "cmdev-dotnet-api",
-      "projectPath": "c:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
+      "projectPath": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\cmdev-dotnet-api.csproj",
       "packagesPath": "C:\\Users\\Yoshi\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\obj\\",
+      "outputPath": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4549,7 +4549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

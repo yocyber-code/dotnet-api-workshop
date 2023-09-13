@@ -13,10 +13,12 @@ namespace cmdev_dotnet_api.services
     public class ProductService : IProductService
     {
         private readonly DatabaseContext databaseContext;
+        private readonly IUploadFileService uploadFileService;
 
-        public ProductService(DatabaseContext databaseContext)
+        public ProductService(DatabaseContext databaseContext,IUploadFileService uploadFileService)
         {
             this.databaseContext = databaseContext;
+            this.uploadFileService = uploadFileService;
         }
 
         public async Task<IEnumerable<Product>> FindAll()
@@ -32,27 +34,50 @@ namespace cmdev_dotnet_api.services
                             .SingleOrDefaultAsync(p => p.ProductId == id);
             return products;
         }
+
         public async Task Create(Product product)
         {
             databaseContext.Products.Add(product);
             await databaseContext.SaveChangesAsync();
         }
+
         public async Task Update(Product product)
         {
             databaseContext.Products.Update(product);
             await databaseContext.SaveChangesAsync();
         }
+
         public async Task Delete(Product product)
         {
             databaseContext.Products.Remove(product);
             await databaseContext.SaveChangesAsync();
         }
+
         public async Task<IEnumerable<Product>> Search(string keyword)
         {
             List<Product> result = await databaseContext.Products.Include(p => p.Category)
             .Where(p => p.Name.ToLower().Contains(keyword.ToLower()))
             .ToListAsync();
             return result;
+        }
+
+        public async Task<(string? errorMessage, string imageName)> UploadImages(List<IFormFile> formFiles)
+        {
+            string errorMessage = "";
+            string imageName = "";
+            if (uploadFileService.IsUpload(formFiles))
+            {
+                errorMessage = uploadFileService.ValidateFile(formFiles);
+                if (errorMessage == null)
+                {
+                    imageName = (await uploadFileService.UploadImages(formFiles))[0];
+                }
+            }
+            else
+            {
+                errorMessage = "The file is not upload";
+            }
+            return (errorMessage, imageName);
         }
     }
 }

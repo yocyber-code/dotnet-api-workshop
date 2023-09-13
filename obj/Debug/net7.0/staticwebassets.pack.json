@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\images\\ba247a3f-bd48-4616-9750-b2c09cbcf855.jpg",
+      "PackagePath": "staticwebassets\\images\\ba247a3f-bd48-4616-9750-b2c09cbcf855.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Yoshi\\Documents\\workshop\\cmdev-dotnet-api\\wwwroot\\images\\c894879e-45d9-4814-a38e-834cfb726c38.png",
+      "PackagePath": "staticwebassets\\images\\c894879e-45d9-4814-a38e-834cfb726c38.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.cmdev-dotnet-api.props",
+      "PackagePath": "build\\cmdev-dotnet-api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.cmdev-dotnet-api.props",
+      "PackagePath": "buildMultiTargeting\\cmdev-dotnet-api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.cmdev-dotnet-api.props",
+      "PackagePath": "buildTransitive\\cmdev-dotnet-api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.cmdev-dotnet-api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

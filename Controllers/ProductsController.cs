@@ -51,7 +51,10 @@ public class ProductsController : ControllerBase
     [HttpPost("")]
     public async Task<ActionResult<ProductModel>> CreateProduct([FromForm] ProductRequest body)
     {
+        (string errorMessage,string imageName) = await productService.UploadImages(body.FormFiles);
+        if(!String.IsNullOrEmpty(errorMessage)) return BadRequest(errorMessage);
         Product product = body.Adapt<Product>();
+        product.Image = imageName;
         await productService.Create(product);
         return CreatedAtAction(nameof(CreateProduct), body);
     }
@@ -60,8 +63,20 @@ public class ProductsController : ControllerBase
     public async Task<ActionResult<ProductUpdateRequest>> UpdateProducts(int id, [FromForm] ProductUpdateRequest body)
     {
         if (id <= 0 || id != body.ProductId) return BadRequest();
-        var product = await productService.FindById(id);
+
+        (string errorMessage, string imageName) = await productService.UploadImages(body.FormFiles);
+
+        if (!String.IsNullOrEmpty(errorMessage)) return BadRequest(errorMessage);
+
+        Product product = await productService.FindById(id);
+
+        if (!String.IsNullOrEmpty(imageName))
+        {
+            product.Image = imageName;
+        }
+
         if (product == null) return NotFound();
+
         Product new_product = body.Adapt(product);
         await productService.Update(new_product);
         return Ok(body);

@@ -2,6 +2,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using cmdev_dotnet_api.Data;
+using cmdev_dotnet_api.Installers;
 using cmdev_dotnet_api.interfaces;
 using cmdev_dotnet_api.services;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +16,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DatabaseContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSQLServer")));
+builder.Services.InstallServiceInAssembly(builder.Configuration);
+
+//builder.Services.AddDbContext<DatabaseContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSQLServer")));
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
@@ -38,7 +41,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAllOrigin");
+
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthorization();
 

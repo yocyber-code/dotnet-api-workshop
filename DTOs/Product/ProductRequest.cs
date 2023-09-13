@@ -23,7 +23,6 @@ namespace cmdev_dotnet_api.DTOs.Product
         [Required]
         public int CategoryId { get; set; }
 
-        [Required]
-        public List<IFormFile> FormFiles { get; set; }
+        public List<IFormFile>? FormFiles { get; set; }
     }
 }
