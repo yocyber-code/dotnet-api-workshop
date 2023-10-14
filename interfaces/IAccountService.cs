@@ -1,7 +1,7 @@
 ﻿using cmdev_dotnet_api.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace cmdev_dotnet_api.Installers
+namespace cmdev_dotnet_api.interfaces
 {
     public interface IAccountService
     {

@@ -1,6 +1,6 @@
 ﻿using cmdev_dotnet_api.DTOs.Account;
 using cmdev_dotnet_api.Entities;
-using cmdev_dotnet_api.Installers;
+using cmdev_dotnet_api.interfaces;
 using Mapster;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
